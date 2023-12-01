@@ -1,0 +1,99 @@
+Script - Banco de Dados
+
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 12-Jun-2023 às 02:32
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `login`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `contatos`
+--
+
+CREATE TABLE `contatos` (
+  `NOME` varchar(100) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `PHONE` varchar(30) NOT NULL,
+  `ASSUNTO` varchar(30) NOT NULL,
+  `MENSAGEM` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `contatos`
+--
+
+INSERT INTO `contatos` (`NOME`, `EMAIL`, `PHONE`, `ASSUNTO`, `MENSAGEM`) VALUES
+('', '', '', '', ''),
+('', '', '', '', ''),
+('', '', '', '', ''),
+('', '', '', '', ''),
+('', '', '', '', ''),
+('', '', '', '', ''),
+('', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `ID` varchar(10) NOT NULL,
+  `NOME` varchar(100) DEFAULT NULL,
+  `EMAIL` varchar(100) DEFAULT NULL,
+  `SENHA` varchar(255) DEFAULT NULL,
+  `DATANASC` date DEFAULT NULL,
+  `SALÁRIO` float(7,2) DEFAULT NULL,
+  `CARGO` varchar(50) DEFAULT NULL,
+  `SETOR` varchar(20) DEFAULT NULL,
+  `path` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `NOME`, `EMAIL`, `SENHA`, `DATANASC`, `SALÁRIO`, `CARGO`, `SETOR`, `path`) VALUES
+('2222101892', 'LARS ULRICK MIRANDA DE AGOSTINO', 'ulrick.lars@uni9.edu.br', 'ca460332316d6da84b08b9bcf39b687b', '1995-01-29', 4000.00, 'ASSISTENTE ADMINISTRATIVO', 'SETOR ADMINISTRATIVO', './img\\funcionarios\\7387366ff2339.jpeg'),
+('2222106512', 'WALAS TEIXEIRA DIAS', 'walasdias@uni9.edu.br', 'abd1c782880cc59759f4112fda0b8f98', '1995-06-12', 1700.00, 'ESTAGIÁRIO', 'SETOR ADMINISTRATIVO', './img\\funcionarios\\7387366ff4590.jpeg'),
+('2222107281', 'HELTON LUIZ DA SILVA ARAUJO', 'notlehziul@uni9.edu.br', '701d804549a4a23d3cae801dac6c2c75', '1999-02-03', 4500.00, 'PROGRAMADOR', 'SETOR TECNOLOGICO', './img/funcionarios/638537d3f0b6b.png'),
+('2222107319', 'RODRIGO MARIANO DE SOUZA', 'souzarodrigo070@uni9.edu.br', '0beb34df7e9615cd43b9090989ca4848', '2000-04-19', 2500.00, 'PROGRAMADOR JUNIOR', 'SETOR DE TECNOLOGIA', './img\\funcionarios\\690437d3f0b6b.jpeg'),
+('2222107434', 'CAIO SABINO DOS SANTOS BISPO', 'cb.bispo@uni9.edu.br', 'e0f48a1058f0f0204b22d4a2fd6f18ae', '2003-05-08', 10000.00, 'PROGRAMADOR CHEFE', 'SETOR DE TECNOLOGIA', './img\\funcionarios\\6377066ff2339.jpg'),
+('2222107471', 'THIAGO GETNER ALVES', 't.getner@uni9.edu.br', '1e591403ff232de0f0f139ac51d99295', '1990-11-16', 25000.00, 'CEO', 'CONSELHO', './img\\funcionarios\\6457066ff2309.jpeg'),
+('2222107518', 'LUCAS COSTA ALVES SILVEIRA', 'lucasnãofeznada@uni9.edu.br', 'cf98f1617165bf975b4dd57ab90269cf', '1995-05-17', 0.00, 'IRRESPONSÁVEL', 'PROJETO', './img\\funcionarios\\9967066ff2309.jpg'),
+('2222107603', 'JHONNY BRASILIANO DA SILVA', 'jhonnyb.silva@uni9.edu.br', '1bcef5d8bd566084523bf65b7e1a245d', '1994-01-01', 2500.00, 'ANALISTA DE INFRAEST', 'SETOR OPERACIONAL', './img\\funcionarios\\8767066ff2309.jpeg'),
+('2222107679', 'VICTORIA LOURRANY SANTOS DE JESUS', 'victorialourrany56@uni9.edu.br', '87eb0c833df5c6d20cd0caabe06a54de', '1990-05-23', 4600.00, 'PROGRAMADOR', 'SETOR DE TECNOLOGIA', './img\\funcionarios\\676537d3f0b6b.jpeg');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
